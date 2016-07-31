@@ -1,6 +1,8 @@
 Deploy User Role
 =========
 
+[![Build Status](https://travis-ci.org/mbreisch/deploy-user-role.svg?branch=master)](https://travis-ci.org/mbreisch/deploy-user-role)
+
 Creates a deploy user, and sets ssh keys. Optionally, changes root password.
 
 Requirements
