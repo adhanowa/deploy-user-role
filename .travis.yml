@@ -15,6 +15,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker-engine
   - ssh-keygen -t rsa -C "name@example.com" -N "" -f ~/.ssh/id_rsa
+  - eval "$(ssh-agent)"
   - ssh-add ~/.ssh/id_rsa
 
 install:
