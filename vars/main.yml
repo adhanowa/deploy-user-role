@@ -1,0 +1,5 @@
+---
+# vars file for deploy-user-role
+# deploy_user_username: deploy
+# deploy_user_password: 'my_really_sa5e_p@ssw0rd'
+# deploy_user_new_root_password: 'my_really_sa5e_p@ssw0rd'

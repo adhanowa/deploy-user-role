@@ -1,0 +1,19 @@
+---
+# tasks file for deploy-user-role
+
+- name: Change root password
+  user: name=root password={{ deploy_user_new_root_password|password_hash('sha512') }}
+  when: deploy_user_change_root_password
+
+- name: Create deploy user
+  user: name={{ deploy_user_username }} password={{ deploy_user_password|password_hash('sha512') }} shell=/bin/bash
+
+- name: Add authorized keys for {{ deploy_user_username }}
+  authorized_key: user={{ deploy_user_username }} key="{{ lookup('file', item) }}"
+  with_items: "{{ deploy_user_public_keys }}"
+
+- name: Add {{ deploy_user_username }} to sudoers
+  lineinfile: dest=/etc/sudoers
+              regexp="{{ deploy_user_username }} ALL"
+              line="{{ deploy_user_username }} ALL=(ALL) ALL"
+              state=present
