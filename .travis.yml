@@ -14,7 +14,7 @@ before_install:
   - deactivate
   - sudo apt-get update -qq
   - sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker-engine
-  - ssh-keygen -t rsa -C "name@example.com"
+  - ssh-keygen -t rsa -C "name@example.com" -f ~/.ssh/id_rsa
   - ssh-add ~/.ssh/id_rsa
 
 install:
