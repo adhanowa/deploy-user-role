@@ -18,10 +18,8 @@ Variables:
 
 Defaults:
 * deploy_user_change_root_password: yes
-* ```
-  deploy_user_public_keys:
-  - ~/.ssh/id_rsa.pub
-  ```
+*     deploy_user_public_keys:
+        - ~/.ssh/id_rsa.pub
   
 Dependencies
 ------------
