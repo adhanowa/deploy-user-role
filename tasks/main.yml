@@ -15,5 +15,5 @@
 - name: Add {{ deploy_user_username }} to sudoers
   lineinfile: dest=/etc/sudoers
               regexp="{{ deploy_user_username }} ALL"
-              line="{{ deploy_user_username }} ALL=(ALL) ALL"
+              line="{{ deploy_user_username }} ALL=(ALL) NOPASSWD:ALL"
               state=present

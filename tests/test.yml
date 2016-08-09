@@ -10,7 +10,7 @@
     - role: provision_docker
       provision_docker_inventory: "{{ inventory }}"
 
-- name: Run ssh tests
+- name: Run deploy user tests
   hosts: docker_containers
   vars:
     deploy_user_username: deploy
